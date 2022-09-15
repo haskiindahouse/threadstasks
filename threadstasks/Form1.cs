@@ -34,14 +34,17 @@ namespace threadstasks
             {
             case SorterType.BubbleSorter:
             {
+                displayBubbleSortData(data);
                 break;
             }
             case SorterType.ShellSorter:
             {
+                displayShellSortData(data);
                 break;
             }
             case SorterType.QuickSorter:
             {
+                displayQuickSortData(data);
                 break;
             }
             }
@@ -52,18 +55,41 @@ namespace threadstasks
             var values = data["values"];
             var compareCount = data["compare"];
             var swapCount = data["swap"];
-            bubbleSort.Items.Add(values);
-
+            var time = data["time"];
+            bubbleCompare.Text = Convert.ToString(compareCount);
+            bubbleSwap.Text = Convert.ToString(swapCount);
+            bubbleTime.Text = Convert.ToString(time);
+            bubbleSort.Items.Clear();
+            foreach (int el in values)
+                bubbleSort.Items.Add(el);
         }
 
         private void displayShellSortData(Dictionary<string, dynamic> data)
         {
-
+            var values = data["values"];
+            var compareCount = data["compare"];
+            var swapCount = data["swap"];
+            var time = data["time"];
+            shellCompare.Text = Convert.ToString(compareCount);
+            shellSwap.Text = Convert.ToString(swapCount);
+            shellTime.Text = Convert.ToString(time);
+            shellSort.Items.Clear();
+            foreach (int el in values)
+                shellSort.Items.Add(el);
         }
 
         private void displayQuickSortData(Dictionary<string, dynamic> data)
         {
-
+            var values = data["values"];
+            var compareCount = data["compare"];
+            var swapCount = data["swap"];
+            var time = data["time"];
+            quickCompare.Text = Convert.ToString(compareCount);
+            quickSwap.Text = Convert.ToString(swapCount);
+            quickTime.Text = Convert.ToString(time);
+            quickSort.Items.Clear();
+            foreach (int el in values)
+                quickSort.Items.Add(el);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -77,6 +103,9 @@ namespace threadstasks
             if (!isValid)
                 MessageBox.Show("Input a number");
 
+            bubbleSort.Items.Clear();
+            shellSort.Items.Clear();
+            quickSort.Items.Clear();
             int min = Convert.ToInt32(minValue.Value);
             int max = Convert.ToInt32(maxValue.Value);
             var values = SortingHelper.generateValues(arraySize, min, max);

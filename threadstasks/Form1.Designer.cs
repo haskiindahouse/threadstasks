@@ -38,9 +38,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.compareCountTxtBox = new System.Windows.Forms.TextBox();
-            this.timeElapsedTxtBox = new System.Windows.Forms.TextBox();
-            this.swapCountTxtBox = new System.Windows.Forms.TextBox();
+            this.bubbleCompare = new System.Windows.Forms.TextBox();
+            this.bubbleTime = new System.Windows.Forms.TextBox();
+            this.bubbleSwap = new System.Windows.Forms.TextBox();
             this.minValue = new System.Windows.Forms.NumericUpDown();
             this.maxValue = new System.Windows.Forms.NumericUpDown();
             this.successivelyRdnBtn = new System.Windows.Forms.RadioButton();
@@ -48,7 +48,7 @@
             this.shellSort = new System.Windows.Forms.ListBox();
             this.bubbleGroupBox = new System.Windows.Forms.GroupBox();
             this.shellGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.shellCompare = new System.Windows.Forms.TextBox();
             this.quickSortGroupBox = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,10 +59,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.shellTime = new System.Windows.Forms.TextBox();
+            this.shellSwap = new System.Windows.Forms.TextBox();
             this.quickGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.quickCompare = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -73,8 +73,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.quickTime = new System.Windows.Forms.TextBox();
+            this.quickSwap = new System.Windows.Forms.TextBox();
             this.generate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.minValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxValue)).BeginInit();
@@ -175,26 +175,26 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "time elapsed";
             // 
-            // compareCountTxtBox
+            // bubbleCompare
             // 
-            this.compareCountTxtBox.Location = new System.Drawing.Point(100, 22);
-            this.compareCountTxtBox.Name = "compareCountTxtBox";
-            this.compareCountTxtBox.Size = new System.Drawing.Size(76, 23);
-            this.compareCountTxtBox.TabIndex = 12;
+            this.bubbleCompare.Location = new System.Drawing.Point(100, 22);
+            this.bubbleCompare.Name = "bubbleCompare";
+            this.bubbleCompare.Size = new System.Drawing.Size(76, 23);
+            this.bubbleCompare.TabIndex = 12;
             // 
-            // timeElapsedTxtBox
+            // bubbleTime
             // 
-            this.timeElapsedTxtBox.Location = new System.Drawing.Point(100, 80);
-            this.timeElapsedTxtBox.Name = "timeElapsedTxtBox";
-            this.timeElapsedTxtBox.Size = new System.Drawing.Size(76, 23);
-            this.timeElapsedTxtBox.TabIndex = 13;
+            this.bubbleTime.Location = new System.Drawing.Point(100, 80);
+            this.bubbleTime.Name = "bubbleTime";
+            this.bubbleTime.Size = new System.Drawing.Size(76, 23);
+            this.bubbleTime.TabIndex = 13;
             // 
-            // swapCountTxtBox
+            // bubbleSwap
             // 
-            this.swapCountTxtBox.Location = new System.Drawing.Point(100, 51);
-            this.swapCountTxtBox.Name = "swapCountTxtBox";
-            this.swapCountTxtBox.Size = new System.Drawing.Size(76, 23);
-            this.swapCountTxtBox.TabIndex = 14;
+            this.bubbleSwap.Location = new System.Drawing.Point(100, 51);
+            this.bubbleSwap.Name = "bubbleSwap";
+            this.bubbleSwap.Size = new System.Drawing.Size(76, 23);
+            this.bubbleSwap.TabIndex = 14;
             // 
             // minValue
             // 
@@ -268,12 +268,12 @@
             // 
             // bubbleGroupBox
             // 
-            this.bubbleGroupBox.Controls.Add(this.compareCountTxtBox);
+            this.bubbleGroupBox.Controls.Add(this.bubbleCompare);
             this.bubbleGroupBox.Controls.Add(this.label4);
             this.bubbleGroupBox.Controls.Add(this.label5);
             this.bubbleGroupBox.Controls.Add(this.label6);
-            this.bubbleGroupBox.Controls.Add(this.timeElapsedTxtBox);
-            this.bubbleGroupBox.Controls.Add(this.swapCountTxtBox);
+            this.bubbleGroupBox.Controls.Add(this.bubbleTime);
+            this.bubbleGroupBox.Controls.Add(this.bubbleSwap);
             this.bubbleGroupBox.Location = new System.Drawing.Point(183, 318);
             this.bubbleGroupBox.Name = "bubbleGroupBox";
             this.bubbleGroupBox.Size = new System.Drawing.Size(183, 111);
@@ -283,13 +283,13 @@
             // 
             // shellGroupBox
             // 
-            this.shellGroupBox.Controls.Add(this.textBox1);
+            this.shellGroupBox.Controls.Add(this.shellCompare);
             this.shellGroupBox.Controls.Add(this.quickSortGroupBox);
             this.shellGroupBox.Controls.Add(this.label7);
             this.shellGroupBox.Controls.Add(this.label8);
             this.shellGroupBox.Controls.Add(this.label9);
-            this.shellGroupBox.Controls.Add(this.textBox2);
-            this.shellGroupBox.Controls.Add(this.textBox3);
+            this.shellGroupBox.Controls.Add(this.shellTime);
+            this.shellGroupBox.Controls.Add(this.shellSwap);
             this.shellGroupBox.Location = new System.Drawing.Point(372, 318);
             this.shellGroupBox.Name = "shellGroupBox";
             this.shellGroupBox.Size = new System.Drawing.Size(183, 111);
@@ -297,12 +297,12 @@
             this.shellGroupBox.TabStop = false;
             this.shellGroupBox.Text = "shell sort";
             // 
-            // textBox1
+            // shellCompare
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 23);
-            this.textBox1.TabIndex = 12;
+            this.shellCompare.Location = new System.Drawing.Point(100, 22);
+            this.shellCompare.Name = "shellCompare";
+            this.shellCompare.Size = new System.Drawing.Size(76, 23);
+            this.shellCompare.TabIndex = 12;
             // 
             // quickSortGroupBox
             // 
@@ -394,29 +394,29 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "time elapsed";
             // 
-            // textBox2
+            // shellTime
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 23);
-            this.textBox2.TabIndex = 13;
+            this.shellTime.Location = new System.Drawing.Point(100, 80);
+            this.shellTime.Name = "shellTime";
+            this.shellTime.Size = new System.Drawing.Size(76, 23);
+            this.shellTime.TabIndex = 13;
             // 
-            // textBox3
+            // shellSwap
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 23);
-            this.textBox3.TabIndex = 14;
+            this.shellSwap.Location = new System.Drawing.Point(100, 51);
+            this.shellSwap.Name = "shellSwap";
+            this.shellSwap.Size = new System.Drawing.Size(76, 23);
+            this.shellSwap.TabIndex = 14;
             // 
             // quickGroupBox
             // 
-            this.quickGroupBox.Controls.Add(this.textBox7);
+            this.quickGroupBox.Controls.Add(this.quickCompare);
             this.quickGroupBox.Controls.Add(this.groupBox2);
             this.quickGroupBox.Controls.Add(this.label16);
             this.quickGroupBox.Controls.Add(this.label17);
             this.quickGroupBox.Controls.Add(this.label18);
-            this.quickGroupBox.Controls.Add(this.textBox11);
-            this.quickGroupBox.Controls.Add(this.textBox12);
+            this.quickGroupBox.Controls.Add(this.quickTime);
+            this.quickGroupBox.Controls.Add(this.quickSwap);
             this.quickGroupBox.Location = new System.Drawing.Point(561, 318);
             this.quickGroupBox.Name = "quickGroupBox";
             this.quickGroupBox.Size = new System.Drawing.Size(183, 111);
@@ -424,12 +424,12 @@
             this.quickGroupBox.TabStop = false;
             this.quickGroupBox.Text = "quick sort";
             // 
-            // textBox7
+            // quickCompare
             // 
-            this.textBox7.Location = new System.Drawing.Point(100, 22);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(76, 23);
-            this.textBox7.TabIndex = 12;
+            this.quickCompare.Location = new System.Drawing.Point(100, 22);
+            this.quickCompare.Name = "quickCompare";
+            this.quickCompare.Size = new System.Drawing.Size(76, 23);
+            this.quickCompare.TabIndex = 12;
             // 
             // groupBox2
             // 
@@ -521,19 +521,19 @@
             this.label18.TabIndex = 11;
             this.label18.Text = "time elapsed";
             // 
-            // textBox11
+            // quickTime
             // 
-            this.textBox11.Location = new System.Drawing.Point(100, 80);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(76, 23);
-            this.textBox11.TabIndex = 13;
+            this.quickTime.Location = new System.Drawing.Point(100, 80);
+            this.quickTime.Name = "quickTime";
+            this.quickTime.Size = new System.Drawing.Size(76, 23);
+            this.quickTime.TabIndex = 13;
             // 
-            // textBox12
+            // quickSwap
             // 
-            this.textBox12.Location = new System.Drawing.Point(100, 51);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(76, 23);
-            this.textBox12.TabIndex = 14;
+            this.quickSwap.Location = new System.Drawing.Point(100, 51);
+            this.quickSwap.Name = "quickSwap";
+            this.quickSwap.Size = new System.Drawing.Size(76, 23);
+            this.quickSwap.TabIndex = 14;
             // 
             // generate
             // 
@@ -598,9 +598,9 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private TextBox compareCountTxtBox;
-        private TextBox timeElapsedTxtBox;
-        private TextBox swapCountTxtBox;
+        private TextBox bubbleCompare;
+        private TextBox bubbleTime;
+        private TextBox bubbleSwap;
         private NumericUpDown minValue;
         private NumericUpDown maxValue;
         private RadioButton successivelyRdnBtn;
@@ -608,7 +608,7 @@
         private ListBox shellSort;
         private GroupBox bubbleGroupBox;
         private GroupBox shellGroupBox;
-        private TextBox textBox1;
+        private TextBox shellCompare;
         private GroupBox quickSortGroupBox;
         private TextBox textBox4;
         private Label label10;
@@ -619,10 +619,10 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox shellTime;
+        private TextBox shellSwap;
         private GroupBox quickGroupBox;
-        private TextBox textBox7;
+        private TextBox quickCompare;
         private GroupBox groupBox2;
         private TextBox textBox8;
         private Label label13;
@@ -633,8 +633,8 @@
         private Label label16;
         private Label label17;
         private Label label18;
-        private TextBox textBox11;
-        private TextBox textBox12;
+        private TextBox quickTime;
+        private TextBox quickSwap;
         private Button generate;
     }
 }
