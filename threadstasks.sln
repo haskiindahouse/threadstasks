@@ -12,7 +12,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketsPaint", "SocketsPain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintServer", "PaintServer\PaintServer.csproj", "{6824E83F-315D-4CBC-A59F-98E068133E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketsPaintClient", "SocketsPaintClient\SocketsPaintClient.csproj", "{5C52C766-F179-4EDC-85C1-888C92355A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocketsPaintClient", "SocketsPaintClient\SocketsPaintClient.csproj", "{5C52C766-F179-4EDC-85C1-888C92355A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewSocketsPaintServer", "NewSocketsPaintServer\NewSocketsPaintServer.csproj", "{59068100-D1BA-413A-B3D5-D69A83CE393A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{5C52C766-F179-4EDC-85C1-888C92355A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C52C766-F179-4EDC-85C1-888C92355A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C52C766-F179-4EDC-85C1-888C92355A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59068100-D1BA-413A-B3D5-D69A83CE393A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59068100-D1BA-413A-B3D5-D69A83CE393A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59068100-D1BA-413A-B3D5-D69A83CE393A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59068100-D1BA-413A-B3D5-D69A83CE393A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

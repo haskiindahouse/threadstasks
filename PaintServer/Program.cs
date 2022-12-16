@@ -1,6 +1,8 @@
-﻿using System.Net.Sockets;
-using System.Net;
+﻿using System;
+using System.Drawing;
 using System.Text;
+using System.Net;
+using System.Net.Sockets;
 
 class PainServer
 {
@@ -32,10 +34,18 @@ class PainServer
         TcpClient client;
 
         lock (_lock) client = list_clients[id];
-
         while (true)
         {
             NetworkStream stream = client.GetStream();
+            try
+            {
+                Bitmap bmp = Bitmap.FromStream(stream);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("something broke");
+            }
+
             byte[] buffer = new byte[1024];
             int byte_count = stream.Read(buffer, 0, buffer.Length);
 
@@ -52,6 +62,30 @@ class PainServer
         lock (_lock) list_clients.Remove(id);
         client.Client.Shutdown(SocketShutdown.Both);
         client.Close();
+    }
+    private static byte[] ReceiveVarData(Socket s)
+    {
+        int total = 0;
+        int recv;
+        byte[] datasize = new byte[4];
+
+        recv = s.Receive(datasize, 0, 4, 0);
+        int size = BitConverter.ToInt32(datasize, 0);
+        int dataleft = size;
+        byte[] data = new byte[size];
+
+
+        while (total < size)
+        {
+            recv = s.Receive(data, total, dataleft, 0);
+            if (recv == 0)
+            {
+                break;
+            }
+            total += recv;
+            dataleft -= recv;
+        }
+        return data;
     }
 
     public static void broadcast(string data)
