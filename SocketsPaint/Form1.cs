@@ -21,26 +21,23 @@ namespace SocketsPaint
             InitializeComponent();
         }
 
-        bool _isDrawing = false;
         Point _startPosition = Point.Empty;
         Bitmap bmp = new Bitmap(500, 500);
-        bool isReserving = false;
+        TcpClient client;
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            _isDrawing = true;
             _startPosition = e.Location;
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!_isDrawing)
-                return;
-
             _startPosition = e.Location;
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.FillEllipse(Brushes.Red, new Rectangle(_startPosition.X, _startPosition.Y, 4, 4));
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(client.GetStream(), bmp);
             }
 
             panel1.Invalidate();
@@ -55,7 +52,7 @@ namespace SocketsPaint
         {
             IPAddress ip = IPAddress.Parse("127.0.0.1");
             int port = 5000;
-            TcpClient client = new TcpClient();
+            client = new TcpClient();
             client.Connect(ip, port);
             Console.WriteLine("client connected!!");
             NetworkStream ns = client.GetStream();
@@ -66,9 +63,12 @@ namespace SocketsPaint
 
         static void ReceiveData(TcpClient client, ref Bitmap bmp)
         {
-            NetworkStream ns = client.GetStream();
-            BinaryFormatter bin = new BinaryFormatter();
-            bmp = (Bitmap)bin.Deserialize(ns);
+            while (true)
+            {
+                NetworkStream ns = client.GetStream();
+                BinaryFormatter bin = new BinaryFormatter();
+                bmp = (Bitmap)bin.Deserialize(ns);
+            }
         }
     }
 }

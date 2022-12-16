@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -42,11 +44,9 @@ namespace NewSocketsPaintServer
             while (true)
             {
                 NetworkStream stream = client.GetStream();
-                Image bmp = Bitmap.FromStream(stream);
-
-                ImageConverter converter = new ImageConverter();
-
-                broadcast((byte[])converter.ConvertTo(bmp, typeof(byte[])));
+                IFormatter formatter = new BinaryFormatter();
+                Bitmap bmp = (Bitmap)formatter.Deserialize(stream);
+                broadcast(bmp);
             }
 
             lock (_lock) list_clients.Remove(id);
@@ -78,15 +78,16 @@ namespace NewSocketsPaintServer
             return data;
         }
 
-        public static void broadcast(byte[] data)
+        public static void broadcast(Bitmap data)
         {
+            BinaryFormatter bin = new BinaryFormatter();
+
             lock (_lock)
             {
                 foreach (TcpClient c in list_clients.Values)
                 {
                     NetworkStream stream = c.GetStream();
-
-                    stream.Write(data, 0, data.Length);
+                    bin.Serialize(stream, data);
                 }
             }
         }
